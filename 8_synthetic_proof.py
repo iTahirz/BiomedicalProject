@@ -1,6 +1,5 @@
 # =============================================================================
 # PHASE 8: SYNTHETIC PROOF (REPLICATING PAPER FIGS 1-4)
-
 # =============================================================================
 
 import numpy as np
@@ -59,6 +58,8 @@ def run_sinc_experiment():
     plt.plot(y, 'k', alpha=0.3, label='Mixture (x1 + x2)')
     plt.plot(x2, 'b', linestyle='--', linewidth=2, label='Target Slow Component (x2)')
     plt.title("A. Input Mixture")
+    # UPDATED LABEL: Horizontal, aligned right, proper padding
+    plt.ylabel("Amplitude", rotation=0, ha='right', va='center', labelpad=15)
     plt.legend()
     plt.grid(True, alpha=0.3)
     
@@ -66,6 +67,8 @@ def run_sinc_experiment():
     plt.plot(x2, 'b', linestyle='--', alpha=0.5, label='Target')
     plt.plot(rec_l2, 'r', label='L2 Estimate (Standard)')
     plt.title("B. L2 Reconstruction (Note: Gibbs Ringing)")
+    # UPDATED LABEL
+    plt.ylabel("Amplitude", rotation=0, ha='right', va='center', labelpad=15)
     plt.legend()
     plt.grid(True, alpha=0.3)
     
@@ -73,6 +76,9 @@ def run_sinc_experiment():
     plt.plot(x2, 'b', linestyle='--', alpha=0.5, label='Target')
     plt.plot(rec_l1, 'g', linewidth=2, label='L1 Estimate (Proposed)')
     plt.title("C. L1 Reconstruction (Better Fit, Less Ringing)")
+    # UPDATED LABEL
+    plt.ylabel("Amplitude", rotation=0, ha='right', va='center', labelpad=15)
+    plt.xlabel("Samples")
     plt.legend()
     plt.grid(True, alpha=0.3)
     
@@ -112,6 +118,8 @@ def run_gaussian_experiment():
     plt.plot(y, 'k', alpha=0.3, label='Mixture (x1 + x2)')
     plt.plot(x2, 'b', linestyle='--', linewidth=2, label='Target Slow Component (x2)')
     plt.title("A. Input Mixture (Gaussians)")
+    # UPDATED LABEL
+    plt.ylabel("Amplitude", rotation=0, ha='right', va='center', labelpad=15)
     plt.legend()
     plt.grid(True, alpha=0.3)
     
@@ -120,6 +128,8 @@ def run_gaussian_experiment():
     plt.plot(rec_l2, 'r', label='L2 Estimate')
     plt.text(mu1, 0.5, "Gibbs Artifacts", color='red', fontweight='bold', ha='center')
     plt.title("B. L2 Reconstruction (Fails on Impulsive Noise)")
+    # UPDATED LABEL
+    plt.ylabel("Amplitude", rotation=0, ha='right', va='center', labelpad=15)
     plt.legend()
     plt.grid(True, alpha=0.3)
     
@@ -127,6 +137,8 @@ def run_gaussian_experiment():
     plt.plot(x2, 'b', linestyle='--', alpha=0.5, label='Target')
     plt.plot(rec_l1, 'g', linewidth=2, label='L1 Estimate')
     plt.title("C. L1 Reconstruction (Robust to Impulsive Noise)")
+    # UPDATED LABEL
+    plt.ylabel("Amplitude", rotation=0, ha='right', va='center', labelpad=15)
     plt.legend()
     plt.grid(True, alpha=0.3)
     
